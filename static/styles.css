@@ -1,1 +1,136 @@
+/* Global Styles */
+body {
+    background-color: rgb(250, 250, 250); /* Light background */
+    color: rgb(40, 40, 40); /* Darker text for readability */
+    font-family: 'Arial', sans-serif !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
 
+/* Main Container */
+.container {
+    max-width: 900px !important;
+    margin: 80px auto !important;
+    background: white !important;
+    padding: 30px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(245, 245, 245, 0.9);
+    color: #333;
+} /* ✅ Fixed the missing bracket */
+
+/* Headings */
+h1 {
+    color: #000000 !important;
+    font-size: 38px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 2px !important;
+}
+
+h2 {
+    color: #f80000 !important;
+    font-size: 24px !important;
+}
+
+/* Product Image */
+.product-image {
+    width: 100% !important;
+    max-width: 600px !important;
+    border-radius: 5px !important;
+    margin: 20px 0 !important;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Benefits Section */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: white; /* Bright, clean background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: rgb(40, 40, 40);
+}
+
+.benefits {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.benefits li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Buy Now Button */
+.buy-section {
+    text-align: center;
+    margin: 30px auto;
+} /* ✅ Removed display: flex; so it centers properly */
+
+.buy-button {
+    background-color: #ff9800;
+    text-align: center;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.buy-button:hover {
+    background-color: #e68900;
+}
+
+/* 🔹🔹🔹 MOBILE-FRIENDLY DESIGN 🔹🔹🔹 */
+
+@media (max-width: 768px) {
+    /* Reduce padding & margins for smaller screens */
+    .container {
+        max-width: 90% !important;
+        padding: 20px !important;
+        margin: 30px auto !important;
+    }
+
+    /* Center and scale down hero text */
+    .hero h1 {
+        font-size: 28px !important;
+    }
+
+    .hero h2 {
+        font-size: 18px !important;
+    }
+
+    /* Scale down product image */
+    .hero-image {
+        max-width: 90% !important;
+    }
+
+    /* Adjust benefits list */
+    .benefits li {
+        font-size: 16px !important;
+    }
+
+    /* Center Buy Now button */
+    .buy-section {
+        text-align: center !important;
+    }
+
+    .buy-button {
+        width: 100% !important;
+        max-width: 300px !important;
+        font-size: 18px !important;
+        padding: 12px 20px !important;
+    }
+}
