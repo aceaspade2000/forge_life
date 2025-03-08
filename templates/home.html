@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forge Life - Built to Last</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}?v=3">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Forge Life</h1>
+        <h2>The Last Scraper You'll Ever Need</h2>
+        <img src="{{ url_for('static', filename='Scraper.png') }}" alt="Forge Life Scraper" class="hero-image">
+    </div>
+
+    <!-- Why Choose Forge Life Section -->
+    <div class="container">
+        <h2>Why Choose Forge Life?</h2>
+        <ul class="benefits">
+            <li>✅ <b>Built to Last</b> – High-quality stainless steel, no rust, no breakage.</li>
+            <li>✅ <b>Eco-Friendly & Plastic-Free</b> – A zero-waste solution for your kitchen.</li>
+            <li>✅ <b>Dishwasher Safe & Chemical-Free</b> – Easy to clean and 100% non-toxic.</li>
+            <li>✅ <b>Precision Cleaning</b> – Effortlessly removes stuck-on food without scratching.</li>
+            <li>✅ <b>Proudly Made in the USA</b> – Supporting local craftsmanship.</li>
+            <li>✅ <b>Limited Lifetime Warranty</b> – No gimmicks, just real quality.</li>
+        </ul>
+        <p class="description">
+            The <b>Forge Life Scraper</b> is designed to outlast plastic and outperform the competition. 
+            Whether you're maintaining your cast iron skillet, cleaning stainless steel pans, or tackling tough residue, 
+            this is the ultimate tool for the job. Upgrade your kitchen essentials today—because some things should last a lifetime.
+        </p>
+    </div>
+
+    <!-- Buy Now Section -->
+    <div class="buy-section">
+        <button class="buy-button" id="checkout-button">Buy Now</button>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe("pk_test_51QyOWHPvCYOqqYFsDOKUbMtTYAFageTUQxOJF9lZDTFLXv1d5QBJpM6xpbWQOruIkjvLlsMSgRenIQDE4BhAG7ud00NhN4vyK7");
+
+        document.getElementById("checkout-button").addEventListener("click", function () {
+            fetch("/checkout", { method: "POST" })
+                .then(response => response.json())
+                .then(session => {
+                    return stripe.redirectToCheckout({ sessionId: session.id });
+                })
+                .catch(error => console.error("Error:", error));
+        });
+    </script>
+
+</body>
+</html>
